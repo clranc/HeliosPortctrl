@@ -1,9 +1,14 @@
 /*
- * File        : portctrl.h
- * Description : Contains functions protoytpes, structs, and defines
- *               relevant to initializing IO Ports on the Helios PC/104
- *               development board to utilize the relevant port pins  for I/O
- * Author      : Chris Ranc
+ * Contains functions protoytpes, structs, and defines relevant 
+ * to initializing IO Ports on the Helios PC/104 development board 
+ * to utilize the relevant port pins  for I/O
+ * 
+ * (C) 2017-2018 Chris Ranc (clranc94@gmail.com)
+ *
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public Licence
+ * as published by the Free Software Foundation; either version
+ * 2.1 of the Licence, or (at your option) any later version.
  */
 
 
@@ -32,6 +37,9 @@
 #define PIN5 0x20
 #define PIN6 0x40
 #define PIN7 0x80
+
+/* Defines for return codes */
+#define FAILEDPERMISSION -1
 
 /* Enumerators for IO ports
  * ** Each port can either only be configured for

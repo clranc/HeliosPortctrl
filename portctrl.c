@@ -1,10 +1,15 @@
 /*
- * File        : portctrl.cpp
- * Description : Routines for initializing and utilizing the IO pins
- *               on Ports A, B, and C in the Helios PC/104 development 
- *               board for QNX
- * Author      : Chris Ranc
+ * Routines for initializing and utilizing the IO pins on Ports A, 
+ * B, and C in the Helios PC/104 development board for QNX.
+ * 
+ * (C) 2017-2018 Chris Ranc (clranc94@gmail.com)
+ *
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public Licence
+ * as published by the Free Software Foundation; either version
+ * 2.1 of the Licence, or (at your option) any later version.
  */
+
 
 #include "portctrl.h"
 
@@ -29,7 +34,7 @@ uintptr_t baseReg;
 int initIOCtrl(void){
     if (ThreadCtl(_NTO_TCTL_IO,NULL)){
         printf("Failed to get access to Helios IO Ports\n");
-        return -1;
+        return FAILEDPERMISSION;
     }
 
     ioCtrlReg = mmap_device_io(1, IO_CTRL_REGISTER);
